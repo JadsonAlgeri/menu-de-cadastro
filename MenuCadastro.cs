@@ -177,7 +177,7 @@ namespace MenuDeCadastro
 
         static void ListarTodos()
         {
-            Console.WriteLine("\nTodos os Cadastros foi selecionado. Por favor, aguarde.");
+            Console.WriteLine("Todos os Cadastros foi selecionado. Por favor, aguarde.");
 
             if (cadastros.Count == 0)
             {
@@ -195,7 +195,8 @@ namespace MenuDeCadastro
         {
             try
             {
-                Console.Write("\nPor favor, digite o ID desejado: ");
+                Console.Write("Por favor, digite o ID desejado: ");
+                Console.WriteLine();
                 if (!int.TryParse(Console.ReadLine(), out int idBusca))
                 {
                     Console.WriteLine("ID inválido. Por favor, confira se está correto.");
@@ -239,7 +240,7 @@ namespace MenuDeCadastro
                     return;
                 }
 
-                Console.WriteLine("\nCadastro encontrado. Por favor, deixe em branco se deseja deixar atualmente como está.");
+                Console.WriteLine("Cadastro encontrado. Por favor, deixe em branco se deseja deixar atualmente como está.");
 
                 Console.Write($"CEP atual: {cadastro.CEP} | Novo CEP: ");
                 string cep = Console.ReadLine();
@@ -247,7 +248,7 @@ namespace MenuDeCadastro
 
                 Console.Write($"UF atual: {cadastro.UF} | Nova UF: ");
                 string uf = Console.ReadLine();
-                if (!string.IsNullOrWhiteSpace(uf)) cadastro.UF = uf.ToUpper();
+                if (!string.IsNullOrWhiteSpace(uf)) cadastro.UF = uf;
 
                 Console.Write($"Cidade atual: {cadastro.Cidade} | Nova cidade: ");
                 string cidade = Console.ReadLine();
