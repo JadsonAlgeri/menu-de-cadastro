@@ -52,9 +52,8 @@ namespace MenuDeCadastro
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Erro de exibição: {ex.Message}");
-                    Console.WriteLine("Pressione qualquer tecla para continuar...");
-                    Console.ReadKey();
+                    Console.WriteLine($"Log: Erro de exibição {ex.Message}");
+                    Console.WriteLine("Erro de exibição. Por favor, contate o administrador.");
                 }
             }
         }
@@ -124,7 +123,7 @@ namespace MenuDeCadastro
                     Console.WriteLine("Número inválido. Por favor, insira dados corretos.");
                 }
 
-                Console.Write("Confirmar cadastro? Por favor, responda com S ou N. ");
+                Console.WriteLine("Confirmar cadastro? Por favor, responda com S ou N.");
                 string resposta = Console.ReadLine().Trim().ToUpper();
 
                 if (resposta == "S")
@@ -149,7 +148,8 @@ namespace MenuDeCadastro
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro de exibição: {ex.Message}");
+                Console.WriteLine($"Log: Erro de exibição: {ex.Message}");
+                Console.WriteLine("Erro de exibição. Por favor, contate o administrador.");
             }
         }
 
@@ -215,7 +215,8 @@ namespace MenuDeCadastro
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao buscar cadastro: {ex.Message}");
+                Console.WriteLine($"Log: Erro de exibição: {ex.Message}");
+                Console.WriteLine("Erro de exibição. Por favor, contate o administrador.");
             }
         }
 
@@ -238,7 +239,7 @@ namespace MenuDeCadastro
                     return;
                 }
 
-                Console.WriteLine("\nCadastro encontrado. Por favor, deixe em branco se deseja deixar atualmente como está.\n");
+                Console.WriteLine("\nCadastro encontrado. Por favor, deixe em branco se deseja deixar atualmente como está.");
 
                 Console.Write($"CEP atual: {cadastro.CEP} | Novo CEP: ");
                 string cep = Console.ReadLine();
@@ -268,7 +269,8 @@ namespace MenuDeCadastro
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro de exibição: {ex.Message}");
+                Console.WriteLine($"Log: Erro de exibição: {ex.Message}");
+                Console.WriteLine("Erro de exibição. Por favor, contate o administrador.");
             }
         }
 
@@ -307,36 +309,30 @@ namespace MenuDeCadastro
             catch (Exception ex)
             {
                 Console.WriteLine($"Erro de exibição: {ex.Message}");
+                Console.WriteLine("Erro de exibição. Por favor, contate o administrador.");
             }
         }
 
         static void ExibirCadastro(Cadastro c)
         {
-            try
-            {
-                Console.WriteLine($"\nID: {c.ID}");
-                Console.WriteLine($"CEP: {c.CEP}");
-                Console.WriteLine($"UF: {c.UF}");
-                Console.WriteLine($"Cidade: {c.Cidade}");
-                Console.WriteLine($"Bairro: {c.Bairro}");
-                Console.WriteLine($"Logradouro: {c.Logradouro}");
-                Console.WriteLine($"Número: {c.Numero}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro de exibição: {ex.Message}");
-            }
+            Console.WriteLine($"ID: {c.ID}");
+            Console.WriteLine($"CEP: {c.CEP}");
+            Console.WriteLine($"UF: {c.UF}");
+            Console.WriteLine($"Cidade: {c.Cidade}");
+            Console.WriteLine($"Bairro: {c.Bairro}");
+            Console.WriteLine($"Logradouro: {c.Logradouro}");
+            Console.WriteLine($"Número: {c.Numero}");
         }
     }
 
     class Cadastro
     {
-        public int ID { get; set; }
-        public string CEP { get; set; }
-        public string UF { get; set; }
-        public string Cidade { get; set; }
-        public string Bairro { get; set; }
-        public string Logradouro { get; set; }
-        public int Numero { get; set; }
+        public int ID {get; set;}
+        public string CEP {get; set;}
+        public string UF {get; set;}
+        public string Cidade {get; set;}
+        public string Bairro {get; set;}
+        public string Logradouro {get; set;}
+        public int Numero {get; set;}
     }
 }
