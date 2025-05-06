@@ -1,4 +1,4 @@
-# MenuCadastro
+# Project - Registration menu
  
-Este foi meu segundo projeto utilizando a linguagem C#, projeto desenvolvido com intuito de cadastrar, listas, atualizar e excluir endereços.
-Projeto dedicado aos meus colegas de trabalho e todos os que confiam em mim.
+This was my second project using the C# language, developed with the purpose of registering, listing, updating, and deleting addresses.
+The project is dedicated to my coworkers.
